@@ -22,6 +22,8 @@ class CreateRecipesTable extends Migration
             $table->foreignId('image_id')
                 ->constrained();
 
+            $table->string('name', 50);
+
             $table->longText('ingredients');
 
             $table->longText('preparation_method')

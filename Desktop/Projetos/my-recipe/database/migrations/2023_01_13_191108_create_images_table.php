@@ -25,7 +25,7 @@ class CreateImagesTable extends Migration
             $table->string('extension', 5)
                 ->comment('Nome da extenção do arquivo da imagem.');
 
-            $table->string('patch', 255)
+            $table->string('path', 255)
                 ->comment('Caminho do storage da imagem.');
 
             $table->string('icon', 50)

@@ -9,6 +9,14 @@ class Image extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'type',
+        'name',
+        'extension',
+        'path',
+        'icon',
+    ];
+
     public function recipes()
     {
         return $this->hasMany(Recipe::class);

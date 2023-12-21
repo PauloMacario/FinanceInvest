@@ -9,6 +9,18 @@ class Recipe extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'category_id',
+        'image_id',
+        'name',
+        'ingredients',
+        'preparation_method',
+        'extra_note',
+        'estimated_time',
+        'people_served',
+        'tips'
+    ];
+
     public function category()
     {
         return $this->belongsTo(Category::class);
@@ -17,5 +29,10 @@ class Recipe extends Model
     public function image()
     {
         return $this->belongsTo(Image::class);
+    }
+
+    public function ratings()
+    {
+        return $this->hasMany(Rating::class);
     } 
 }
