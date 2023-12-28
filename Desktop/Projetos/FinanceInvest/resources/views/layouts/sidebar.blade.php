@@ -14,19 +14,19 @@
             </li>
             <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Parcelas</span>
+                    <i class="fa fa-credit-card-alt" aria-hidden="true"></i><span class="nav-text">Parcelas</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="{{ route('installment_get_index') }}"><i class="fa fa-credit-card-alt" aria-hidden="true"></i>Listar parcelas</a></li>
+                    <li><a href="{{ route('installment_get_index') }}"><i class="fa fa-list" aria-hidden="true"></i>Listar parcelas</a></li>
                 </ul>
             </li>
             <li class="mega-menu mega-menu-sm">
                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                    <i class="icon-globe-alt menu-icon"></i><span class="nav-text">Investimentos</span>
+                    <i class="fa fa-line-chart" aria-hidden="true"></i><span class="nav-text">Investimentos</span>
                 </a>
                 <ul aria-expanded="false">
-                    <li><a href="./layout-blank.html">FIIs</a></li>
-                    <li><a href="./layout-one-column.html">Tesouro direto</a></li>
+                    <li><a href="./layout-blank.html"><i class="fa fa-pie-chart" aria-hidden="true"></i>FIIs</a></li>
+                    <li><a href="./layout-one-column.html"><i class="fa fa-usd" aria-hidden="true"></i>Tesouro direto</a></li>
                 </ul>
             </li>
            {{--  <li class="nav-label">Apps</li>

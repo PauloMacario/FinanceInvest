@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('installment');
             $table->decimal('value', 10,2);
             $table->date('paydate');
-            $table->enum('status', ['PO', 'NP', 'CN' ])
+            $table->enum('status', ['PO', 'NP', 'CN'])
                 ->default('NP')
                 ->comment('PO-> paid out | NP-> Not paid| CN-> canceled')
             ;

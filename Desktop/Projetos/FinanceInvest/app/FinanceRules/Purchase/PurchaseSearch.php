@@ -1,6 +1,6 @@
 <?php
 
-namespace App\FinanceRules;
+namespace App\FinanceRules\Purchase;
 
 use App\Models\Purchase;
 

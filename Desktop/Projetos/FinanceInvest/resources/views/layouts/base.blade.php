@@ -54,7 +54,7 @@
                     <span class="logo-compact ttext-light">
                         F&I{{-- <img src="{{ asset('images/logo-compact.png') }}" alt=""> --}}
                     </span>
-                    <span class="brand-title text-light">
+                    <span class="brand-title text-white">
                         Financ&invest{{-- <img src="{{ asset('images/logo-text.png') }}" alt=""> --}}
                     </span>
                 </a>
@@ -139,6 +139,27 @@
 
             <div class="container-fluid mt-3">
                 @yield('content')
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title mb-4">
+                            <h2>
+                                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                                Novas tarefas
+                            </h2>
+                            <hr>
+
+                            <ul>
+                                <li>1° Incluir compra recorrente anual</li>
+                                <li>2° Incluir compra para todos compradores (divisão de compra)</li>
+                                <li>3° Filtros compra</li>  
+                                <li>4° Paginações</li>   
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
             </div>
             <!-- #/ container -->
         </div>
@@ -194,6 +215,15 @@
     <script src="{{ asset('plugins/jquery-mask-plugin/dist/jquery.mask.min.js') }}"></script>
 
     @yield('script')
+
+    <script>
+        $(document).ready( function () {
+    
+            $('#value').mask("#.###.###,##", {reverse: true});
+    
+        });
+    </script>
+
 
 </body>
 

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\FinanceRules;
+namespace App\FinanceRules\Purchase;
 
 use App\Models\Purchase;
+use App\FinanceRules\Installment\InstallmentNew;
 
 class PurchaseNew
 {   

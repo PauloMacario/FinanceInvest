@@ -33,13 +33,13 @@ if (! function_exists('text_status')) {
     {
         switch ($status) {
             case 'NP':
-                return "<p class=\"text-danger\">Pendente</p>";
+                return "<span class=\"text-danger\">Pendente</span>";
                 break;
             case 'PO':
-                return "<p class=\"text-success\">Pago</p>";
+                return "<span class=\"text-success\">Pago</span>";
                 break;
             case 'CN':
-                return "<p class=\"text-secondary\">Cancelada</p>";
+                return "<span class=\"text-secondary\">Cancelada</span>";
                 break;            
             default:
                 return $status;

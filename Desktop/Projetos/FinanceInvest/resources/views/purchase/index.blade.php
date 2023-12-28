@@ -7,10 +7,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title mb-4">
-                        <h2>
+                        <h4>
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>    
                             {{ $title }}
-                        </h2>
+                        </h4>
                         <hr>
                     </div>
                     @if(!$purchases->count())
@@ -29,13 +29,14 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>TIPO</th>
-                                        <th>SEGMENTO</th>
-                                        <th>DATA</th>
-                                        <th>LOCAL</th>
-                                        <th>DESCRIÇÃO</th>
-                                        <th>VALOR</th>
-                                        <th>PARCELA(S)</th>
+                                        <th>Data</th>
+                                        <th>Tipo</th>
+                                        <th>Segmento</th>
+                                        <th>Local</th>
+                                        <th>Descrição</th>
+                                        <th>Valor</th>
+                                        <th>Parcela(S)</th>
+                                        <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,13 +46,18 @@
                                         @endphp
                                         
                                         <tr>
+                                            <td>{{ date_br($purchase->date) }}</td>
                                             <td>{{ $purchase->type->name }}</td>
                                             <td>{{ $purchase->segment->name }}</td>
-                                            <td>{{ date_br($purchase->date) }}</td>
                                             <td>{{ $purchase->trade_name }}</td>
                                             <td>{{ $purchase->description }}</td>
                                             <td>R$ {{ money_br($purchase->value) }}</td>
                                             <td>{{ $purchase->number_installments }}</td>
+                                            <td>
+                                                <a href="{{ route('purchase_get_edit', ['id' => $purchase->id]) }}">
+                                                    <i class="fa fa-pencil-square-o fa-lg" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

@@ -6,10 +6,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title mb-4">
-                        <h2>
+                        <h4>
                             <i class="fa fa-plus-circle" aria-hidden="true"></i>
                             {{ $title }}
-                        </h2>
+                        </h4>
                         <hr>
                     </div>
                     <div class="basic-form">
@@ -111,8 +111,6 @@
 @section('script')
     <script>
         $(document).ready( function () {
-
-            $('#value').mask("#.###.###,##", {reverse: true});
             $('#type').change( function (e) {
                 let active_installment = $('#type option:selected').attr('data-active-installment')
 

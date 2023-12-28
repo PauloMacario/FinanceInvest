@@ -6,10 +6,10 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title mb-4">
-                        <h2>
+                        <h4>
                             <i class="fa fa-credit-card-alt" aria-hidden="true"></i>    
                             {{ $title }}
-                        </h2>
+                        </h4>
                         <hr>
                     </div>
                     @if(!$installments->count())

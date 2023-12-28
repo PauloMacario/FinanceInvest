@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Purchase;
 use App\Models\Shopper;
 use App\Models\Type;
-use App\FinanceRules\PurchaseNew;
+use App\FinanceRules\Purchase\PurchaseNew;
+use App\FinanceRules\Purchase\PurchaseUpdate;
 use App\Models\Segment;
 
 class PurchaseController extends Controller
@@ -29,6 +30,37 @@ class PurchaseController extends Controller
         $context['shoppers'] = Shopper::all();
 
         return view('purchase.create', $context);
+    }
+
+    public function edit($id)
+    {
+        $context['title'] = "Editar compra";
+
+        $context['types'] = Type::all();
+        $context['segments'] = Segment::all();
+        $context['shoppers'] = Shopper::all();
+
+        $purchase = new PurchaseUpdate();
+
+        $context['purchase'] = $purchase->getDataEdit($id);
+
+        return view('purchase.edit', $context);
+
+    }
+
+
+    public function update(Request $request)
+    {
+        $purchase = new PurchaseUpdate();
+        
+        if (!$purchase->update($request->id, $request->except('_token', '_method', 'id'))) {
+            $request->session()->flash('error', 'Ocorreu um erro ao atualizar :(');
+            return redirect()->back();
+        }
+
+        $request->session()->flash('success', 'Parcela editada!');
+
+        return redirect()->route('purchase_get_index');
     }
 
     public function store(Request $request)
